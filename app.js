@@ -20,6 +20,10 @@ db.authenticate()
 require('./api/routes/analytics.routes')(app);
 require('./api/routes/event.routes')(app);
 
+app.get('/health-check',(req,res)=>{
+	res.status(200).json({message:'OK'})
+});
+
 app.listen(config.port, (err) => {
   if (err) {
     throw err;
