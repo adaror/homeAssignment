@@ -20,6 +20,16 @@ const PageViews = db.define('page-views', {
   }
 },{
   timestamps: false
+},{
+  indexes:[
+   {
+     unique: true,
+     fields:['id']
+   },{
+    unique: false,
+    fields:['pageId', 'userId', 'timeStamp', 'country']
+   }
+  ]
 });
 
 module.exports = PageViews;

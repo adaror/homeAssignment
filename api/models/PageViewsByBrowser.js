@@ -14,6 +14,13 @@ const PageViewsByBrowser = db.define('pageViewByBrowser', {
   }
 },{
   timestamps: false
+},{
+  indexes:[
+{
+    unique: false,
+    fields:['pageViewId', 'browserName', 'timeStamp']
+   }
+  ]
 });
 
 module.exports = PageViewsByBrowser;
