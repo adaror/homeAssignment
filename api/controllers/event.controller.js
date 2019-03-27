@@ -8,7 +8,7 @@ async function addNewEvent(req, res) {
     const event = req.body;
     const agent = useragent.parse(req.headers['user-agent']);
     const browserName = agent && agent.family;
-    const userIp = '31.154.66.38'; // req.ip;
+    const userIp = req.ip;
     if(_.isEmpty(event)) {
       res.status(httpStatuses.noContent).send({error:'no content'});
     }
@@ -16,7 +16,7 @@ async function addNewEvent(req, res) {
     res.status(httpStatuses.ok).json({message: 'event is inserted'});
   }
   catch(err) {
-    res.status(httpStatuses.badRequest).send(err);
+    res.status(httpStatuses.serverError).send(err);
   }
 }
 

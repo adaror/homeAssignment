@@ -11,7 +11,7 @@ async function pageViewByBrowserName(req, res) {
     res.status(httpStatuses.ok).json(pageViews);
   }
   catch(err) {
-    res.status(httpStatuses.badRequest).send(err);
+    res.status(httpStatuses.serverError).send(err);
   }
 }
 
@@ -25,7 +25,7 @@ async function pageViewByCountry(req, res) {
     res.status(httpStatuses.ok).json(pageViews);
   }
   catch(err) {
-    res.status(httpStatuses.badRequest).send(err);
+    res.status(httpStatuses.serverError).send(err);
   }
 }
 
@@ -39,7 +39,7 @@ async function pageViewByPageId(req, res) {
     res.status(httpStatuses.ok).json(pageViewsByPageId);
   }
   catch(err) {
-    res.status(httpStatuses.badRequest).send(err);
+    res.status(httpStatuses.serverError).send(err);
   }
 }
 
@@ -49,7 +49,7 @@ async function rateOfReturningUsers(req, res) {
     res.status(httpStatuses.ok).json(returningUsers);
   }
   catch(err) {
-    res.status(httpStatuses.badRequest).send(err);
+    res.status(httpStatuses.serverError).send(err);
   }
 }
 
