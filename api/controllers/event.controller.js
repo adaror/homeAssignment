@@ -10,7 +10,7 @@ async function addNewEvent(req, res) {
     const browserName = agent && agent.family;
     const userIp = req.ip;
     if(_.isEmpty(event)) {
-      res.status(httpStatuses.noContent).send({error:'no content'});
+      res.status(httpStatuses.badRequest).send({error:'no content'});
     }
     await eventAnalyticsService.insertEvent(event, userIp, browserName);
     res.status(httpStatuses.ok).json({message: 'event is inserted'});
