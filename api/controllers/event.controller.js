@@ -1,7 +1,6 @@
 const httpStatuses = require('../utils/httpStatuses');
 const useragent = require('useragent');
 const _ = require('lodash');
-const eventAnalyticsService = require('../services/eventAnalytics.service');
 const eventService = require('../services/event.service');
 
 async function addNewEvent(req, res) {
